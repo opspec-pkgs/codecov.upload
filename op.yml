@@ -1,0 +1,31 @@
+name: codecov.upload
+description: uploads a coverage report to codecov.io
+inputs:
+  gitBranch:
+    string:
+      constraints: { minLength: 1 }
+      description: git branch the coverage should be associated with
+      default: master
+  token:
+    string:
+      constraints: { minLength: 1 }
+      description: codecov.io repository token
+  report:
+    file:
+      description: the coverage report to upload; see codecov.io docs for supported formats
+run:
+  container:
+    cmd:
+      - sh
+      - -ce
+      - |
+        echo "publishing coverage"
+        curl -s https://codecov.io/bash | bash -f /report
+    dirs:
+      /workDir: srcDir
+    files:
+      /report: report
+    envVars:
+      CODECOV_TOKEN: $(token)
+      GIT_BRANCH: $(gitBranch)
+    image: { ref: 'golang:1.8' }
