@@ -23,5 +23,5 @@ opctl run github.com/opspec-pkgs/codecov.upload#VERSION
 run:
   op:
     pkg: { ref: github.com/opspec-pkgs/codecov.upload#VERSION }
-    inputs: { gitBranch, token, report }
+    inputs: { gitBranch, gitCommit, token, report }
 ```
