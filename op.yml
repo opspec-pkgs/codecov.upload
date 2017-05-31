@@ -4,8 +4,11 @@ inputs:
   gitBranch:
     string:
       constraints: { minLength: 1 }
-      description: git branch the coverage should be associated with
-      default: master
+      description: git branch the coverage should be associated w/
+  gitCommit:
+    string:
+      constraints: { minLength: 1}
+      description: git commit the coverage should be associated w/
   token:
     string:
       constraints: { minLength: 1 }
@@ -20,7 +23,7 @@ run:
       - -ce
       - |
         echo "publishing coverage"
-        curl -s https://codecov.io/bash | bash -f /report
+        curl -s https://codecov.io/bash | bash -s - -f /report -Z
     dirs:
       /workDir: srcDir
     files:
@@ -28,4 +31,5 @@ run:
     envVars:
       CODECOV_TOKEN: $(token)
       GIT_BRANCH: $(gitBranch)
+      GIT_COMMIT: $(gitCommit)
     image: { ref: 'golang:1.8' }
