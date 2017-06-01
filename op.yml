@@ -1,4 +1,4 @@
-name: codecov.upload
+name: github.com/opspec-pkgs/codecov.upload
 description: uploads a coverage report to codecov.io
 inputs:
   gitBranch:
