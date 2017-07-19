@@ -20,14 +20,13 @@ opctl run github.com/opspec-pkgs/codecov.upload#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/codecov.upload#VERSION }
-    inputs: 
-      gitBranch:
-      gitCommit:
-      token:
-      report:
+op:
+  pkg: { ref: github.com/opspec-pkgs/codecov.upload#VERSION }
+  inputs: 
+    gitBranch:
+    gitCommit:
+    token:
+    report:
 ```
 
 # Support
