@@ -16,6 +16,7 @@ inputs:
   report:
     file:
       description: the coverage report to upload; see codecov.io docs for supported formats
+version: 1.1.0
 run:
   container:
     cmd:
@@ -24,8 +25,6 @@ run:
       - |
         echo "publishing coverage"
         curl -s https://codecov.io/bash | bash -s - -f /report -Z
-    dirs:
-      /workDir: srcDir
     files:
       /report: report
     envVars:
