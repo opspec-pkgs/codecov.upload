@@ -26,7 +26,7 @@ run:
         echo "publishing coverage"
         curl -s https://codecov.io/bash | bash -s - -f /report -Z
     files:
-      /report: report
+      /report: $(report)
     envVars:
       CODECOV_TOKEN: $(token)
       GIT_BRANCH: $(gitBranch)
