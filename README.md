@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/codecov.upload.svg?branch=master)](https://travis-ci.org/opspec-pkgs/codecov.upload)
 
+<img src="icon.svg" alt="icon" height="100px">
 
 # Problem statement
 
@@ -31,8 +32,8 @@ op:
   inputs:
     gitBranch:
     gitCommit:
-    report:
     token:
+    report:
 ```
 
 # Support
