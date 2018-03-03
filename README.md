@@ -1,43 +1,46 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/codecov.upload.svg?branch=master)](https://travis-ci.org/opspec-pkgs/codecov.upload)
 
+
 # Problem statement
 
 uploads a coverage report to codecov.io
 
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+
 # Example usage
 
-> note: in examples, VERSION represents a version of the codecov.upload
-> pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/codecov.upload#VERSION
+opctl pkg install github.com/opspec-pkgs/codecov.upload#1.1.0
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/codecov.upload#VERSION
+opctl run github.com/opspec-pkgs/codecov.upload#1.1.0
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/codecov.upload#VERSION }
-  inputs: 
+  pkg: { ref: github.com/opspec-pkgs/codecov.upload#1.1.0 }
+  inputs:
     gitBranch:
     gitCommit:
-    token:
     report:
+    token:
 ```
 
 # Support
 
 join us on
 [![Slack](https://opspec-slackin.herokuapp.com/badge.svg)](https://opspec-slackin.herokuapp.com/)
-or [open an issue](https://github.com/opspec-pkgs/codecov.upload/issues)
+or
+[open an issue](https://github.com/opspec-pkgs/codecov.upload/issues)
 
 # Releases
 
